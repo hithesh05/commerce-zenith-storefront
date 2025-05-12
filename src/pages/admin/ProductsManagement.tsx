@@ -63,14 +63,14 @@ const ProductsManagement = () => {
           </div>
           <div className="w-full sm:w-40">
             <Select 
-              value={categoryFilter || ''} 
+              value={categoryFilter || undefined} 
               onValueChange={(value) => setCategoryFilter(value || null)}
             >
               <SelectTrigger>
                 <SelectValue placeholder="All Categories" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="">All Categories</SelectItem>
+                <SelectItem value="all">All Categories</SelectItem>
                 {categories.map(category => (
                   <SelectItem key={category.id} value={category.id}>
                     {category.name}
